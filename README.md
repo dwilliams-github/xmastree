@@ -30,7 +30,12 @@ Jump over there for some really cool projects.
 This is the design from the link above, redrawn as a schematic,
 and inserted here to give this project some badly needed 
 legitimacy. It doesn't really work, because the circuit is
-very simple.
+very simple. It looks pretty though, and I could use the practice.
+
+![Layout](layout.png)
+
+The LEDs require a lot of power, and so I've connected an external
+5V DC power supply.
 
 ## Hardware
 
@@ -44,8 +49,8 @@ them together in series.
 The other stuff is pretty generic. Choose your favorite models
 and suppliers:
 
- * https://www.amazon.com/gp/product/B01D92SSX6 Vilros Raspberry Pi 3 Kit with Clear Case and 2.5A Power Supply
- * https://www.amazon.com/gp/product/B00XW2L39K SN74AHCT125N Quad level shifter
+ * https://www.amazon.com/gp/product/B01D92SSX6 Vilros Raspberry Pi 3 Kit 
+ * https://www.amazon.com/gp/product/B00XW2L39K 74AHCT125 Quad level converter
  * https://www.amazon.com/gp/product/B01HYXAG04 SMAKN® AC 100-240V DC 5V 10A 50W power adapter
 
 ## Software
@@ -55,7 +60,16 @@ of this code is included, but you probably want to go to the source.
 
  * https://github.com/jgarff/rpi_ws281x
 
+## Compatibility
+
+Sound interferes with the LED controller and should be turned off
+```
+echo "blacklist snd_bcm2835" > /etc/modprobe.d/raspi-blacklist.conf
+```
+
 ## Automation
 
-I used [zdaemon](https://pypi.org/project/zdaemon/) to install a Python script
-as a service on the Raspberry Pi.
+I used [zdaemon](https://pypi.org/project/zdaemon/) to wrap a Python script
+as a service on the Raspberry Pi. The Python script ```xmastree.py``` that 
+implements this service 
+is hard coded to turn off the lights between midnight and 7 AM.
