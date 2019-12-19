@@ -35,7 +35,9 @@ very simple. It looks pretty though, and I could use the practice.
 ![Layout](layout.png)
 
 The LEDs require a lot of power, and so I've connected an external
-5V DC power supply.
+5V DC power supply. The Raspberry Pi's PCM CLK signal is 3.3V, so
+something is needed to convert the level to the 5V needed by the 
+LED driver chips.
 
 ## Hardware
 
