@@ -2,6 +2,8 @@
 
 A Raspberry Pi with single-addressable RGB LEDs for my Christmas tree.
 
+https://vimeo.com/379925448
+
 ## Why?
 
 A few years ago, while staring at a broken strand of conventional
